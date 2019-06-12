@@ -1,0 +1,17 @@
+[0] Config.pm:302> INFO - This is Biber 2.11
+[0] Config.pm:305> INFO - Logfile is '/Users/lorenzorota/Documents/University/Jacobs University/Undergrad/Maths/Undergraduate Seminar/fermats-little-theorem/TeX/.texpadtmp/document.blg'
+[59] biber-darwin:313> INFO - === Thu Mar 21, 2019, 04:09:14
+[97] Biber.pm:371> INFO - Reading '/Users/lorenzorota/Documents/University/Jacobs University/Undergrad/Maths/Undergraduate Seminar/fermats-little-theorem/TeX/.texpadtmp/document.bcf'
+[207] Biber.pm:854> INFO - Using all citekeys in bib section 0
+[223] Biber.pm:3976> INFO - Processing section 0
+[236] Biber.pm:4136> INFO - Looking for bibtex format file '/Users/lorenzorota/Documents/University/Jacobs University/Undergrad/Maths/Undergraduate Seminar/fermats-little-theorem/TeX/./tex/references.bib' for section 0
+[238] bibtex.pm:1500> INFO - LaTeX decoding ...
+[244] bibtex.pm:1316> INFO - Found BibTeX data source '/Users/lorenzorota/Documents/University/Jacobs University/Undergrad/Maths/Undergraduate Seminar/fermats-little-theorem/TeX/./tex/references.bib'
+[250] Utils.pm:193> WARN - Entry 'Weisstein' (/Users/lorenzorota/Documents/University/Jacobs University/Undergrad/Maths/Undergraduate Seminar/fermats-little-theorem/TeX/./tex/references.bib): Invalid format '20-03-19' of date field 'urldate' - ignoring
+[305] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[305] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[305] Biber.pm:3804> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[305] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[315] bbl.pm:617> INFO - Writing '/Users/lorenzorota/Documents/University/Jacobs University/Undergrad/Maths/Undergraduate Seminar/fermats-little-theorem/TeX/.texpadtmp/document.bbl' with encoding 'UTF-8'
+[317] bbl.pm:720> INFO - Output to /Users/lorenzorota/Documents/University/Jacobs University/Undergrad/Maths/Undergraduate Seminar/fermats-little-theorem/TeX/.texpadtmp/document.bbl
+[317] Biber.pm:110> INFO - WARNINGS: 1

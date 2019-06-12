@@ -1,0 +1,7 @@
+# ignore the following files/folders
+syllabus.pdf
+topics_rotation_2.pdf
+Sample1.pdf
+rotation_2_schedule_of_talks.pdf
+fermats-little-theorem/sources/*
+five-color-theorem/sources/*

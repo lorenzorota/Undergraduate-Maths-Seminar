@@ -1,0 +1,64 @@
+\section{Proof of the Euler-Fermat theorem and correctness of the RSA algorithm}
+We will first prove Fermat's little theorem (Theorem~\ref{fermat_thrm}) with the use of two properties:
+\begin{property}[Addition/Multiplication]
+\label{add_mult_prop}
+For $a,b,x,y \in \mathbb{Z}$, if $a \equiv b$ and $x \equiv y$, then $a \pm x \equiv b \pm y$ and $ax \equiv by$
+\end{property}
+\begin{property}[Cancellation]
+\label{cancel_prop}
+For $a,b,x,y,m \in \mathbb{Z}$, if $ax \equiv by, \ a \equiv b$ and $a, m$ are relatively prime, then $x \equiv y~(\text{mod}~m)$
+\end{property}
+The second property can be proven as follows:
+\begin{align*}
+ax - by &\equiv 0~(\text{mod}~m) \\
+\iff a(x - y) &\equiv 0~(\text{mod}~m) & (a \equiv b)\\
+\iff a(x - y) &= km & (k \in \mathbb{Z}) \\
+\implies x - y &= km & (\text{gcd}(a, m) = 1)\\
+\iff x &\equiv y~(\text{mod}~m)
+\end{align*}
+Fermat's little theorem can then be proved as follows:
+\begin{proof}
+Consider the set of residues of $a~(\text{mod}~p)$ to be defined as\\
+$S \defeq \{0, 1, 2, \ldots, (p-1) \}$, which contains $p$ multiples of $a$. Since each residue forms an equivalence class when $ax~(\text{mod}~p) = ay~(\text{mod}~p) \implies ax \equiv ay~(\text{mod}~p) \implies x \equiv y~(\text{mod}~p)$ as $\text{gcd}(a,p) = 1$ by the cancellation property. This allows us to choose any two integers from the same residue class, and by the multiplicative property we can multiply between elements from all the residue classes (excluding 0):
+\begin{align*}
+as &\equiv s~(\text{mod}~p) & (s \in S)\\
+\implies (a) \cdot (2a) \cdot \ldots \cdot (p - 1)a &\equiv 1 \cdot 2 \cdot \ldots \cdot (p - 1)~(\text{mod}~p) & (\text{Property}~\ref{add_mult_prop}) \\
+\implies a^{p - 1} (p - 1)! &\equiv (p - 1)!~(\text{mod}~p) \\
+\implies a^{p - 1} &\equiv 1~(\text{mod}~p) & (\text{Property}~\ref{cancel_prop})
+\end{align*}
+The last step is true because the factorial of $p - 1$ must be relatively prime to $p$ as it contains no factors of $p$
+\end{proof}
+The proof of Euler's theorem (Theorem~\ref{euler_thrm}) works in a similar fashion, but first let us define the set of integers which are relatively prime to some integer $n$ as: $U_n \defeq \{ a \modulo{n} : \gcd(a, n) \}$. Since this follows from the definition of $\varphi(n)$, we say that $|U_n| = \varphi(n)$. The proof then goes as follows:
+\begin{proof}
+Consider the set of residues of $a \modulo{n}$ to be defined as\\
+$S \defeq \{ u_1, u_2, \ldots, u_{\varphi(n)} \}$, where $u_i \in U_n$ and $1 \leq i \leq \varphi(n)$. Since $u_i$ represents the residue class, and $\gcd(a, n) = 1$, we argue similarly that $x \equiv y \modulo{n}$ for numbers from the same residue class. Thus:
+\begin{align*}
+as &\equiv s~(\text{mod}~p) & (s \in S)\\
+\implies (a u_1) \cdot (a u_2) \cdot \ldots \cdot (a u_{\varphi(n)}) &\equiv u_1 \cdot u_2 \cdot \ldots \cdot u_{\varphi(n)} \modulo{n} & (\text{Property}~\ref{add_mult_prop}) \\
+\implies a^{\varphi(n)} (u_1 \cdot u_2 \cdot \ldots \cdot u_{\varphi(n)}) &\equiv u_1 \cdot u_2 \cdot \ldots \cdot u_{\varphi(n)} \modulo{n} \\
+\implies a^{\varphi(n)} &\equiv 1 \modulo{n} & (\text{Property}~\ref{cancel_prop})
+\end{align*}
+The last step is clearly true, because all $u_i$ are relatively prime to $n$, thus their product must also be relatively prime and therefore the cancellation property holds
+\end{proof}
+The last proof will prove the correctness of the RSA algorithm; in particular Theorem~\ref{RSA_thrm}. This requires the use of the Chinese remainder theorem (for which the proof will be omitted)
+\begin{theorem}
+\label{chinese_thrm}
+Let $p, q \in \mathbb{Z^{+}}$ be relatively prime, and $x, y \in \mathbb{Z}$. Then there exists $M \in \mathbb{Z}$ such that:
+\begin{align*}
+M \equiv x \modulo{p} \\
+M \equiv y \modulo{q}	
+\end{align*}
+where $M \modulo{pq}$ has a unique solution.
+\end{theorem}
+The proof that $M^{ed} \equiv M \modulo{n}$ goes as follows:
+\begin{proof}
+Since $n \defeq pq$, and $p,q$ are both prime, by Theorem~\ref{chinese_thrm} it suffices to show that $M^{ed} \equiv M \modulo{p}$ and $M^{ed} \equiv M \modulo{q}$. Since both $p$ and $q$ are prime, it will be shown for one prime number (i.e. $p$). If $M$ is divisible by $p$, then it is trivially true since $M \equiv 0 \modulo{n}$. If $M$  is relatively prime to $p$, consider the following: Since $ed \equiv 1 \modulo{\varphi(n)}$, then $\exists k \in \mathbb{Z}$ such that $ed - 1 = k \varphi(n)$, where $\varphi(n) = \varphi(p) \varphi(q)$:
+\begin{align*}
+M^{ed} &\equiv M^{1 + k \varphi(p) \varphi(q)} \\
+&\equiv M (M^{\varphi(p)})^{k \varphi(q)} \\
+&\equiv M 1^{k \varphi(q)} & (\text{Theorem}~\ref{euler_thrm}) \\
+&\equiv M \modulo{p} \\
+&\equiv M \modulo{n} & (\text{Theorem}~\ref{chinese_thrm})
+\end{align*}
+
+\end{proof}

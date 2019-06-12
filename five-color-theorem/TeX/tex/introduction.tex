@@ -1,0 +1,91 @@
+\section{Introduction}
+Consider a geographic map which is to be coloured. The smallest number of colours needed to separate two regions on the map is known to be 4. This fact was initially conjectured by August Möbious, and was only proved in the last century through an exhaustive computer assisted proof. A simpler related problem involves 5 colours instead of 4, which will be proved in the course of the paper. In order to build a mathematical proposition, we will transform a coloured geographic map into a graph. First consider the following:
+\begin{definition}[Plane dual]
+\label{def:plane_dual}
+Let $G = (V, E)$ and $G^{*} = (V^{*}, E^{*})$ be planar graphs. $G$ is said to be a plane dual of $G^{*}$ if every face in $G$ contains exactly one vertex in $G^{*}$, and any two vertices in $G^{*}$ share an edge when the two faces are separated by an edge in $G$
+\end{definition}
+In the context of coloured geographic maps, each coloured region is separated by an ``edge'', where every point of intersection holds the place of a vertex, thus forming the graph $G$. In reality, the notion of an edge and vertex needs a stronger definition in a space like $\mathbb{R}^{2}$, but for colouring regions this will suffice. It is clear that $G$ then has a plane dual $G^{*}$, whose vertices take on the colours of the faces in $G$
+
+To properly state the five colour theorem with respect to the vertices of a graph, we need to define the following:
+
+\begin{definition}[Vertex colouring]
+\label{def:vert_col}
+A graph $G$ has a vertex colouring, defined by the map $c : V \longrightarrow S$, where $S$ is the set of available colours and $\forall v, w \in V(G). ~ c(v) \not = c(w)$.
+\end{definition}
+
+\begin{definition}[k-colouring]
+\label{def:k_col}
+A vertex colouring of G is said to be a k-colouring when $c : V \longrightarrow \{ i \in \mathbb{N} \ : \ 1 \leq i \leq k \}$.
+\end{definition}
+
+\begin{definition}[Chromatic number]
+\label{def:chrom_col}
+The chromatic number of a graph G, denoted $\upchi(G)$, is the smallest k-colouring of G.
+\end{definition}
+
+\begin{definition}[k-colourability]
+\label{def:k_colity}
+A graph G is k-colourable if $\upchi(G) \leq k$
+\end{definition}
+
+We can now introduce the five colour theorem as a vertex colouring problem as follows:
+\begin{theorem}[Five colour theorem]
+\label{thm:five_colour}
+Every planar graph G is 5-colourable
+\end{theorem}
+
+For the proof of Theorem~\ref{thm:five_colour}, we will consider an important theorem (assumed to be true) and its corollary:
+\begin{theorem}[Euler's formula]
+\label{thm:euler_formula}
+Let a graph G be planar-connected with $v$ vertices, $e$ edges and $f$ faces. It follows that: $v - e + f = 2$	
+\end{theorem}
+
+\begin{corollary}
+\label{cor:euler_formula}
+If a planar-connected graph G has $v \geq 3$ vertices and $e$ edges, it follows that: $e \leq 3v - 6$	
+\end{corollary}
+
+For the proof of the corollary as well as the five colour theorem, we need to introduce (and prove) a few lemmas:
+\begin{lemma}[Handshaking lemma]
+\label{lem:handshaking}
+\begin{align*}
+\sum_{v \in V(G)} \deg(v) = 2 |E(G)|	
+\end{align*}
+\end{lemma}
+\begin{proof}
+The smallest number of vertices required to form an edge is 2. Since the sum of vertex degrees counts every edge exactly twice, the lemma holds
+\end{proof}
+
+\begin{lemma}
+\label{lem:edge_face}
+If a graph $G$ is planar and has $e$ edges and $f$ faces, it follows that: $2e \geq 3f$
+\end{lemma}
+\begin{proof}
+	The smallest number of edges required to form a face is 3. In this case, e = 3 and f = 2 (considering the outer face), and since two contiguous faces share an edge, it follows that $2e = 3f$. If we add an edge to one of the vertices, it follows that $2e \geq 3f$
+\end{proof}
+
+We can now prove Corollary~\ref{cor:euler_formula}
+\begin{proof}[Proof (Corollary~\ref{cor:euler_formula})]
+\begin{align*}
+2 &= v- e + f && (\text{Theorem}~\ref{thm:euler_formula}) \\
+\iff f &= 2 + e - v \\
+\implies 2e &\geq 3(2 + e - v) && (\text{Lemma}~\ref{lem:edge_face}) \\
+&= 6 + 3e - 3v \\
+\iff e &\leq 3v - 6
+\end{align*}
+\end{proof}
+
+\begin{lemma}
+\label{lem:deg_leq_six}
+For a planar-connected graph G with v vertices and e edges, there exists a vertex $\tilde{v} \in V(G)$ such that $\deg(\tilde{v}) < 6$
+\end{lemma}
+\begin{proof}
+\begin{align*}
+e &\leq 3v - 6 && (\text{Corollary}~\ref{cor:euler_formula}) \\
+\implies \sum_{\tilde{v} \in V(G)} \deg(\tilde{v}) &= 2e \leq 2(3v- 6) && (\text{Lemma}~\ref{lem:handshaking}) \\
+\implies \underbrace{\frac{1}{v} \sum_{\tilde{v} \in V(G)} \deg(\tilde{v})}_{\deg(\tilde{v}')} &= \frac{2e}{v} \leq \frac{6v - 12}{v}\\
+\implies \deg({\tilde{v}')} & = \frac{2e}{v} \leq 6 - \frac{12}{v} < 6 && (\text{Since} ~v \in \mathbb{N}) \\
+\implies \deg(\tilde{v}) &< 6
+\end{align*}
+\end{proof}
+The last step is clearly true since the average degree of a vertex can only be $< 6$ when there exists a vertex degree $< 6$. If the every vertex degree is $\geq 6$ (i.e. a 6-regular graph), then it cannot be planar (and will not hold for Corollary~\ref{cor:euler_formula})

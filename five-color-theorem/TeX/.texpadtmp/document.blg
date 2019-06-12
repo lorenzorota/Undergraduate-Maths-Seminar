@@ -1,0 +1,15 @@
+[0] Config.pm:302> INFO - This is Biber 2.11
+[0] Config.pm:305> INFO - Logfile is '/Users/lorenzorota/Documents/University/Jacobs University/Undergrad/Maths/Undergraduate Seminar/four-color-problem/TeX/.texpadtmp/document.blg'
+[45] biber-darwin:313> INFO - === Wed Apr  3, 2019, 04:00:25
+[69] Biber.pm:371> INFO - Reading '/Users/lorenzorota/Documents/University/Jacobs University/Undergrad/Maths/Undergraduate Seminar/four-color-problem/TeX/.texpadtmp/document.bcf'
+[155] Biber.pm:854> INFO - Using all citekeys in bib section 0
+[167] Biber.pm:3976> INFO - Processing section 0
+[178] Biber.pm:4136> INFO - Looking for bibtex format file '/Users/lorenzorota/Documents/University/Jacobs University/Undergrad/Maths/Undergraduate Seminar/four-color-problem/TeX/./tex/references.bib' for section 0
+[179] bibtex.pm:1500> INFO - LaTeX decoding ...
+[186] bibtex.pm:1316> INFO - Found BibTeX data source '/Users/lorenzorota/Documents/University/Jacobs University/Undergrad/Maths/Undergraduate Seminar/four-color-problem/TeX/./tex/references.bib'
+[225] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[226] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[226] Biber.pm:3804> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[226] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[234] bbl.pm:617> INFO - Writing '/Users/lorenzorota/Documents/University/Jacobs University/Undergrad/Maths/Undergraduate Seminar/four-color-problem/TeX/.texpadtmp/document.bbl' with encoding 'UTF-8'
+[235] bbl.pm:720> INFO - Output to /Users/lorenzorota/Documents/University/Jacobs University/Undergrad/Maths/Undergraduate Seminar/four-color-problem/TeX/.texpadtmp/document.bbl

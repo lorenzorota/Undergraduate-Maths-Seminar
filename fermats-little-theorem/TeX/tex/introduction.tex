@@ -1,0 +1,68 @@
+\section{Introduction}
+Fermat's little theorem, as the name suggests, was thought to have originally been discovered by Fermat, and later proven by Euler. The idea of the theorem is that one can find two integers: an integer which is prime, call it $p$, and an integer which is not a multiple of $p$, call it $a$. Taking the exponent $p - 1$ of the base $a$ is said to always have the remainder of 1 when dividing it by the prime number $p$. A simple and useful application of Fermat's little theorem, is indicating whether a number is a probable prime (as in some cases, the remainder will still be 1 for non-primes).
+
+Euler discovered a stronger notion of the same theorem, which generalises over all numbers which are relatively prime. This is known as Euler's totient theorem, which is a fundamentally used in the RSA crypto-system.
+
+In order to formalise both theorems and demonstrate its application, it is crucial to first define the basic notions of modular congruence. First let us define divisibility of two integers as follows:
+\begin{definition}
+For any $n, m \in \mathbb{Z} \setminus \{ 0\}$, n is said to be divisible by m, denoted $m | n$, if and only if $mk = n$, for some constant $k \in \mathbb{Z} \setminus \{ 0\}$
+\end{definition}
+Next, we define what it means for two integers to be relatively prime:
+\begin{definition}
+For any $n, m \in \mathbb{Z} \setminus \{ 0\}$, m and n are relatively prime, denoted $m \perp n$ or $n \perp m$, if and only if the $\text{gcd}(m, n) = 1$
+\end{definition}
+It is also important to note that $\text{gcd}(m, n) = 1 \iff m \not \equiv 0~(\text{mod}~n) \\ \iff m \not|~n$. The middle equivalence utilises the notion of modular congruence, which we can define as follows:
+\begin{definition}
+Let $x, y, z \in \mathbb{Z}$. We can define modular congruence as $x \equiv y~(\text{mod}~z)$, if and only if $z | (x - y)$
+\end{definition}
+Here it is clear that for $x$ to be equivalent to $y~(\text{mod}~z)$, the difference must be divisible by $z$. This is then also equivalent to $x~(\text{mod}~z) = y~(\text{mod}~z)$. We can now formalise Fermat's little theorem as follows:
+\begin{theorem}[Fermat's little theorem]
+\label{fermat_thrm}
+For any $a \in \mathbb{Z}$, which is relatively prime with the prime number $p$, then $a^{p - 1} \equiv 1~(\text{mod}~p)$
+\end{theorem}
+Expanding on the brief introduction, a stronger notion of Fermat's theorem is the Euler theorem, which considers two relatively prime integers that are not necessarily prime themselves. This requires the use of the so-called totient function:
+\begin{definition}
+The Euler totient function $\varphi(n)$, is the number of positive integers less than or equal to $n$, which are relatively prime to $n$.
+\end{definition}
+The Totient function can also be defined as the cardinality of a set of relatively prime integers $\leq$ n: $\varphi(n) \defeq \left| \left\{ a \in \mathbb{Z} : 1 \leq a \leq n, ~\text{gcd}(a,n) = 1 \right\} \right|$. The theorem is thus stated as follows:
+\begin{theorem}[Euler's theorem]
+\label{euler_thrm}
+For any $a, n \in \mathbb{Z}^{+}$ and $n \geq 2$ which are relatively prime, then $a^{\varphi(n)} \equiv 1~(\text{mod}~n)$
+\end{theorem}
+In the next section both theorems will be proved and understood, but for now it is assumed that they are indeed true. Before elaborating on the importance of Euler's theorem in the RSA-cryptography algorithm, we first need to look at a property that arises from the totient function:
+\begin{proposition}
+For $p,q \in \mathbb{Z}$ prime, then $\varphi(pq) = \varphi(p) \varphi(q)$
+\end{proposition}
+The proof is simple, and goes as follows:
+\begin{proof}
+The composition $pq$ can be expressed in terms of either the multiples of $p$ or $q$:
+\begin{enumerate}[label = (\roman*)]
+\item $p, \ 2p, \ \ldots, \ (q - 1)p, \ qp$
+\item $q, \ 2q, \ \ldots, \ (p - 1)q, \ pq$
+\end{enumerate}
+From this, we know that there are exactly $p + q - 1$ multiples of $pq$, where we exclude the last multiple of itself as we only want to count it once. From the definition of $\varphi(pq)$, we count the number of positive integers $\leq pq$ which are relatively prime to $pq$, thus: \\
+$\varphi(pq) = pq - (p + q - 1) = (p - 1)(q - 1) = \varphi(p) \varphi(q)$
+\end{proof}
+RSA cryptography works through the means of public and private key distribution (usually of a particular size). The algorithm can be outlined as follows: \\
+\textbf{Generating the keys} (Receiver):
+\begin{itemize}
+\item Let $n \defeq pq$ where $p,q \in \mathbb{Z}^{+}$ prime
+\item Let $e \in \mathbb{Z}^{+}$ be odd, such that $e$ and $\varphi(n)$ are relatively prime
+\item Find $d \in \mathbb{Z}$, such that $ed \equiv 1~(\text{mod}~\varphi(n))$
+\item Let \texttt{public-key} $\defeq (e, n)$ and \texttt{private-key} $\defeq (d, n)$
+\end{itemize}
+\textbf{Encryption} (Sender): uses \texttt{public-key}
+\begin{itemize}
+\item Let the message to be encrypted be $M \in \mathbb{Z}$ and ensure $2 \leq M \leq n$.
+\item Let $M' \defequiv M^{e}~(\text{mod}~n)$ be the newly encrypted message
+\end{itemize}
+\textbf{Decryption} (Receiver): uses \texttt{private-key}
+\begin{itemize}
+\item Compute $(M')^{d} \equiv M^{ed}~(\text{mod}~n)$
+\item Since $M^{ed} \equiv M~(\text{mod}~n)$, the original message $M$ is retrieved
+\end{itemize}
+This results in the following theorem, which will be proved in the next section:
+\begin{theorem}[RSA]
+\label{RSA_thrm}
+Let $n \defeq pq$ where $p,q \in \mathbb{Z}^{+}$ are prime. For some $e \in \mathbb{Z}^{+}.~\exists d \in \mathbb{Z}$ such that $ed \equiv 1~(\text{mod}~\varphi(n))$, then $M^{ed} \equiv M~(\text{mod}~n)$
+\end{theorem}

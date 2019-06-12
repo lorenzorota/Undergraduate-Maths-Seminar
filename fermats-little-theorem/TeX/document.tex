@@ -1,0 +1,57 @@
+%% document preamble
+\documentclass[12pt, a4paper, openany]{article}
+
+%% packages go here
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{centernot}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage[backend=biber]{biblatex}
+\usepackage{hyperref}
+
+%% configurations
+\title{The Euler-Fermat theorem and RSA cryptography}
+\author{Lorenzo Rota}
+\date{March 20, 2019}
+
+\newtheorem{theorem}{Theorem}[section]
+%\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{property}[theorem]{Property}
+
+\allowdisplaybreaks
+\addbibresource{./tex/references.bib}
+%% command definitions
+\newcommand{\defeq}{\vcentcolon=}
+\newcommand{\defequiv}{\vcentcolon\equiv}
+\newcommand{\modulo}[1]{~(\mathrm{mod}~#1)}
+
+%% document
+\begin{document}
+
+\input{./tex/title.tex}
+\input{./tex/abstract.tex}
+\input{./tex/introduction.tex}
+\input{./tex/euler_fermat_rsa.tex}
+
+\nocite{*}
+\pagebreak
+\printbibliography
+
+\end{document}

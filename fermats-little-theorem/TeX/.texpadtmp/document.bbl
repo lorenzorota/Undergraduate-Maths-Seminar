@@ -1,0 +1,142 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{Conrad}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=90ec52f4eb212ed86bae500930692247}{%
+           family={Conrad},
+           familyi={C\bibinitperiod},
+           given={Keith},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{90ec52f4eb212ed86bae500930692247}
+      \strng{fullhash}{90ec52f4eb212ed86bae500930692247}
+      \strng{bibnamehash}{90ec52f4eb212ed86bae500930692247}
+      \strng{authorbibnamehash}{90ec52f4eb212ed86bae500930692247}
+      \strng{authornamehash}{90ec52f4eb212ed86bae500930692247}
+      \strng{authorfullhash}{90ec52f4eb212ed86bae500930692247}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Euler's theorem}}
+      \field{pages}{1\bibrangedash 4}
+      \range{pages}{4}
+      \verb{file}
+      \verb :Users/lorenzorota/Documents/University/Jacobs University/Undergrad/Maths/Undergraduate Seminar/fermats-little-theorem/sources/eulerthm.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://kconrad.math.uconn.edu/blurbs/ugradnumthy/eulerthm.pdf
+      \endverb
+      \verb{url}
+      \verb https://kconrad.math.uconn.edu/blurbs/ugradnumthy/eulerthm.pdf
+      \endverb
+    \endentry
+    \entry{Klappenecker}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=59c4823d313d133595a21f29592836df}{%
+           family={Klappenecker},
+           familyi={K\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{59c4823d313d133595a21f29592836df}
+      \strng{fullhash}{59c4823d313d133595a21f29592836df}
+      \strng{bibnamehash}{59c4823d313d133595a21f29592836df}
+      \strng{authorbibnamehash}{59c4823d313d133595a21f29592836df}
+      \strng{authornamehash}{59c4823d313d133595a21f29592836df}
+      \strng{authorfullhash}{59c4823d313d133595a21f29592836df}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{The RSA Public-Key Cryptosystem}}
+      \field{pages}{1\bibrangedash 3}
+      \range{pages}{3}
+      \verb{file}
+      \verb :Users/lorenzorota/Documents/University/Jacobs University/Undergrad/Maths/Undergraduate Seminar/fermats-little-theorem/sources/rsa.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://faculty.cs.tamu.edu/klappi/csce222-s11/rsa.pdf
+      \endverb
+      \verb{url}
+      \verb http://faculty.cs.tamu.edu/klappi/csce222-s11/rsa.pdf
+      \endverb
+    \endentry
+    \entry{Knuth1968}{book}{}
+      \name{author}{1}{}{%
+        {{hash=1098a9bb6b2a52c309044c4af547287e}{%
+           family={Knuth},
+           familyi={K\bibinitperiod},
+           given={Donald\bibnamedelima Ervin},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{1098a9bb6b2a52c309044c4af547287e}
+      \strng{fullhash}{1098a9bb6b2a52c309044c4af547287e}
+      \strng{bibnamehash}{1098a9bb6b2a52c309044c4af547287e}
+      \strng{authorbibnamehash}{1098a9bb6b2a52c309044c4af547287e}
+      \strng{authornamehash}{1098a9bb6b2a52c309044c4af547287e}
+      \strng{authorfullhash}{1098a9bb6b2a52c309044c4af547287e}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3rd}
+      \field{isbn}{9780201896831}
+      \field{title}{{The Art of Computer Programming, Vol. 1: Fundamental Algorithms}}
+      \field{year}{1968}
+      \field{pages}{39\bibrangedash 41}
+      \range{pages}{3}
+    \endentry
+    \entry{Weisstein}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=5d54d442adc2a0d430f0728fd6530577}{%
+           family={Weisstein},
+           familyi={W\bibinitperiod},
+           given={Eric\bibnamedelima W.},
+           giveni={E\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{5d54d442adc2a0d430f0728fd6530577}
+      \strng{fullhash}{5d54d442adc2a0d430f0728fd6530577}
+      \strng{bibnamehash}{5d54d442adc2a0d430f0728fd6530577}
+      \strng{authorbibnamehash}{5d54d442adc2a0d430f0728fd6530577}
+      \strng{authornamehash}{5d54d442adc2a0d430f0728fd6530577}
+      \strng{authorfullhash}{5d54d442adc2a0d430f0728fd6530577}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Residue Class}}
+      \verb{urlraw}
+      \verb http://mathworld.wolfram.com/ResidueClass.html
+      \endverb
+      \verb{url}
+      \verb http://mathworld.wolfram.com/ResidueClass.html
+      \endverb
+      \warn{\item Entry 'Weisstein' (/Users/lorenzorota/Documents/University/Jacobs University/Undergrad/Maths/Undergraduate Seminar/fermats-little-theorem/TeX/./tex/references.bib): Invalid format '20-03-19' of date field 'urldate' - ignoring}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
